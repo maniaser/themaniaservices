@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.program.dickowizard" name="SportsMania Wizard" version="2.0.6" provider-name="Dicko the Geordie">
+  <requires>
+	<import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Community Builds</summary>
+	<description>All the latest and greatest SportsMania, SportsNationHD and UltimateMania builds from Dicko The Geordie and ADR </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.maniaguide" name="Ultimate Mania Guide"
+version="0.0.85"
+provider-name="rolica, ManiaTeam">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.dateutil" version="2.4.2" />
+        <import addon="script.module.pil" />
+        <import addon="script.module.beautifulsoup4" />
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+            <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en">You need an active subscription to one of the Mania services for this to work. UltimateMania,</description>
+        <disclaimer lang="en">Based on the original TV Guide addon by twinther, FTV Guide, Midraal's fork and Primaevals latest.</disclaimer>
+		<summary lang="en_GB">The Official TV Guide for the Mania Services.</summary>
+		<news>v0.0.85  (2017-08-14)- Release
+- New buttons added to menu bar
+- Kodi/SPMC core audio and video controls now accessible from the menu bar
+- New Categories for Ultimatemania
+- New Quick access EPL button for all EPL live games (EPL lions head button)
+- Can now access tv guide settings from within the tv guide
+- Gamezone button fixed
+- Both calendar buttons now working </news>
+        <language>en_GB</language>
+        <platform>all</platform>
+        <license>GPLv2</license>
+        <forum>https://mania.guide/support/</forum>
+		<website>https://mania.guide/</website>
+		<email>tvguide@rolica.co.uk</email>
+        <source></source>
+        <website>https://mania.guide</website>
+        <email>tvguide@rolica.co.uk</email>
+		<assets>
+			<icon>resources/media/icon.png</icon>
+			<fanart>resources/media/fanart.jpg</fanart>
+			<screenshot>resources/media/screenshot-01.jpg</screenshot>
+			<screenshot>resources/media/screenshot-02.jpg</screenshot>
+			<screenshot>resources/media/screenshot-04.jpg</screenshot>
+		</assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.maniaguidemh" name="ManiaHD Guide"
+version="0.0.85"
+provider-name="rolica, ManiaTeam">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.dateutil" version="2.4.2" />
+        <import addon="script.module.pil" />
+		<import addon="script.module.beautifulsoup4" />
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+            <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en">You need an active subscription to ManiaHD.rocks for this to work. </description>
+        <disclaimer lang="en">Based on the original TV Guide addon by twinther, FTV Guide, Midraal's fork and Primaevals latest.</disclaimer>
+		<summary lang="en_GB">The Official TV Guide for the Mania Services.</summary>
+		<news>v0.0.85  (2017-08-24)- Release</news>
+        <language>en_GB</language>
+        <platform>all</platform>
+        <license>GPLv2</license>
+        <forum>https://mania.guide/support/</forum>
+        <source></source>
+        <website>https://mania.guide</website>
+        <email>tvguide@rolica.co.uk</email>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+		</assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.maniaguidesm" name="Sportsmania Guide"
+version="0.0.85"
+provider-name="rolica, ManiaTeam">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.dateutil" version="2.4.2" />
+        <import addon="script.module.pil" />
+		<import addon="script.module.beautifulsoup4" />
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py">
+            <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en">You need an active subscription to Sportsmania.rocks for this to work. </description>
+        <disclaimer lang="en">Based on the original TV Guide addon by twinther, FTV Guide, Midraal's fork and Primaevals latest.</disclaimer>
+		<summary lang="en_GB">The Official TV Guide for the Mania Services.</summary>
+		<news>v0.0.85  (2017-08-24)- Release</news>
+        <language>en_GB</language>
+        <platform>all</platform>
+        <license>GPLv2</license>
+        <forum>https://mania.guide/support/</forum>
+        <source></source>
+        <website>https://mania.guide</website>
+        <email>tvguide@rolica.co.uk</email>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+		</assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.sportsmania" name="SportsMania" version="3.9.3" provider-name="The Mania Team">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.urlresolver" version="0.0.1"/>
+       <import addon="script.module.requests" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">Premium sports streaming service</summary>
+    <description lang="en">This is a premium streaming service you will need an account from http://sportsmania.rocks</description>
+    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://sportsmania.rocks[/B][/I][/COLOR]</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.sportsnationhdtv" name="Mania HD" version="3.9.3" provider-name="The Mania Team">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.urlresolver" version="0.0.1"/>
+    <import addon="script.module.requests" version="0.0.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">24-7 Streaming of various tv shows or show types</summary>
+    <description lang="en">This is a premium streaming service you will need an account from http://maniahd.rocks</description>
+    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://maniahd.rocks[/B][/I][/COLOR]</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.ultimatemania" name="UltimateMania" version="3.9.3" provider-name="The Mania Team">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.urlresolver" version="0.0.1"/>
+       <import addon="script.module.requests" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">UltimateMania - Ultimate Streams!</summary>
+    <description lang="en">This is a premium streaming service you will need an account from http://ultimatemania.rocks
+        </description>
+    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://ultimatemania.rocks/ [/B][/I][/COLOR]</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="repository.themaniaservices" name="The Mania Services Repo" version="1.0" provider-name="The Mania team">
+	<extension point="xbmc.addon.repository" name="The Mania Services Addon Repository">
+		<info compressed="false">https://raw.githubusercontent.com/maniaser/themaniaservices/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/maniaser/themaniaservices/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/maniaser/themaniaservices/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary></summary>
+		<description></description>
+		<platform>all</platform>
+	</extension>
+</addon>
+</addons>
+

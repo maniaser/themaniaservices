@@ -748,7 +748,8 @@ def GENRES(name,url):
        except:pass
 
     if url=='40':
-       SportsOnDemand('http://'+THESITE+'/apisprotected/bt.php')
+       try:SportsOnDemand('http://'+THESITE+'/apisprotected/bt.php')
+       except:pass
 
     if url=='70':
        try:SportsOnDemand('http://'+THESITE+'/apisprotected/clubs.php')

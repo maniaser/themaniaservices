@@ -1,3 +1,13 @@
+version 0.9 (2018-03-02)
+- New Colour Theme Builder Added
+- Create your own colours
+- New Action Bar Buttons
+- Addon Much Lighter Now
+- EPL Button Goes to Correct Matchday
+- Guide Settings Button Now Works Correctly
+- Action Bar Now Lands At Categories Instead of Search
+- Font Size Adjustment Added
+
 version 0.85
 - New buttons added to menu bar
 - Kodi/SPMC core audio and video controls now accessible from the menu bar

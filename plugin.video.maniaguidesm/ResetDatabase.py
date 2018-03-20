@@ -66,3 +66,5 @@ if __name__ == '__main__':
             dirs, files = xbmcvfs.listdir('special://profile/addon_data/plugin.video.maniaguidesm/logos')
             for f in files:
                 xbmcvfs.delete('special://profile/addon_data/plugin.video.maniaguidesm/logos/%s' % f)
+        if mode == 5:
+            xbmcvfs.delete('special://profile/addon_data/plugin.video.maniaguidesm/settings.xml')					

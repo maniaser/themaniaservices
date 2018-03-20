@@ -618,7 +618,7 @@
                     <label>Favourites</label>
                 </control>
                 <control type="button" id="70100">
-                    <description>gamezone</description>
+                    <description>Gamezone</description>
                     <posx>730</posx>
                     <posy>0</posy>
                     <width>49</width>
@@ -632,7 +632,7 @@
                     <textcolor></textcolor>
                     <focusedcolor></focusedcolor>
                     <font>font13</font>
-                    <label></label>
+                    <label>STVB</label>
 					<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsnationhdtv/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsnationhdtv%2fresources%2fgames.png&amp;mode=4&amp;name=%5bCOLOR%20blueviolet%5d.GAME%20ZONE%20SECTION%20Updated%20Daily%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=47&quot;,return)</onclick>
                 </control>
 				

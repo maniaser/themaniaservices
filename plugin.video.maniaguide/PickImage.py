@@ -31,7 +31,7 @@ if where == -1:
      quit()
 place = places[where]
 if place == "Local":
-    image = d.browse(2, 'Image', 'files', '', True, False)
+    image = d.browse(1, 'Image', 'files', '', True, False)
     if image:
         ADDON.setSetting(setting,image)
 

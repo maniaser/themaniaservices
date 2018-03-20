@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SM -->
 <window>
     <allowoverlay>no</allowoverlay>
     <coordinates>
@@ -254,7 +253,7 @@
             <control type="label" id="4000">
                 <description>Displays todays date - Toggle in word</description>
                 <posx>0</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>180</width>
                 <height>30</height>
                 <textcolor>white</textcolor>
@@ -268,7 +267,7 @@
             <control type="label" id="3999">
                 <description>Displays date - Toogle in numbers</description>
                 <left>1080</left>
-                <posy>2</posy>
+                <posy>3</posy>
                 <width>180</width>
                 <height>30</height>
                 <font>font10</font>
@@ -281,44 +280,44 @@
             <control type="label" id="4001">
                 <description>1st half hour column</description>
                 <posx>180</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>270</width>
                 <height>30</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>grey</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <font>font13</font>
                 <aligny>center</aligny>
             </control>
             <control type="label" id="4002">
                 <description>2nd half hour column</description>
                 <posx>455</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>270</width>
                 <height>30</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>grey</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <font>font13</font>
                 <aligny>center</aligny>
             </control>
             <control type="label" id="4003">
                 <description>3rd half hour column</description>
                 <posx>730</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>270</width>
                 <height>30</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>grey</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <font>font13</font>
                 <aligny>center</aligny>
             </control>
             <control type="label" id="4004">
                 <description>4th half hour column</description>
                 <posx>1005</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>270</width>
                 <height>30</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>grey</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <font>font13</font>
                 <aligny>center</aligny>
             </control>
@@ -343,7 +342,7 @@
             <control type="button" id="4318">
                 <description>next day</description>
                 <posx>100r</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>100</width>
                 <height>40</height>
                 <label></label>
@@ -359,7 +358,7 @@
             <control type="button" id="4319">
                 <description>prev day</description>
                 <posx>200r</posx>
-                <posy>0</posy>
+                <posy>3</posy>
                 <width>100</width>
                 <height>40</height>
                 <label></label>
@@ -1355,7 +1354,8 @@
                     <posy>6</posy>
                     <width>174</width>
                     <height>38</height>
-                    <textcolor>ff92d600</textcolor>
+                    <textcolor>ffc6c6c6</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                     <font>font14_bold</font>
                     <align>center</align>
                     <scroll>true</scroll>
@@ -1368,7 +1368,8 @@
                     <width>790</width>
                     <height>38</height>
                     <font>font14_bold</font>
-                    <textcolor>ff92d600</textcolor>
+                    <textcolor>ffc6c6c6</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                     <align>left</align>
                     <scroll>true</scroll>
                     <label>Program Title</label>
@@ -1379,7 +1380,8 @@
                     <posy>0</posy>
                     <width>300</width>
                     <height>38</height>
-                    <textcolor>white</textcolor>
+                    <textcolor>ffc6c6c6</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                     <font>font14_bold</font>
                     <align>right</align>
                     <aligny></aligny>
@@ -1392,7 +1394,8 @@
                     <posy>6</posy>
                     <width>300</width>
                     <height>38</height>
-                    <textcolor>ff92d600</textcolor>
+                    <textcolor>ffc6c6c6</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                     <font>font14_bold</font>
                     <align>right</align>
                     <aligny></aligny>
@@ -1437,7 +1440,8 @@
                 <posy>50</posy>
                 <width>720</width>
                 <height>186</height>
-                <textcolor>white</textcolor>
+                    <textcolor>ffFFFFFF</textcolor>
+					<shadowcolor>88000000</shadowcolor>
                 <font>font14</font>
                 <align>left</align>
                 <wrapmultiline>true</wrapmultiline>
@@ -1479,7 +1483,8 @@
                 <height>40</height>
                 <align>right</align>
                 <aligny></aligny>
-                <textcolor>white</textcolor>
+                    <textcolor>ffffffff</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                 <font>font13</font>
                 <label>Duration</label>
                 <visible>true</visible> 
@@ -1492,7 +1497,8 @@
                 <height>40</height>
                 <align>right</align>
                 <aligny></aligny>
-                <textcolor>lightskyblue</textcolor>
+                    <textcolor>ffffffff</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                 <font>font13</font>
                 <scroll>true</scroll>
                 <label fallback="[B]... minutes remaining[/B]"></label>
@@ -1511,8 +1517,8 @@
                 <posy>58</posy>
                 <width>200</width>
                 <height>40</height>
-                <textcolor>white</textcolor>
-                <shadowcolor>midnightblue</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <font>font14_bold</font>
                 <align>right</align>
                 <aligny>top</aligny>
@@ -1526,8 +1532,8 @@
                 <width>200</width>
                 <height>4</height>
                 <font>font16</font>
-                <textcolor>white</textcolor>
-                <shadowcolor>darkgrey</shadowcolor>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
                 <align>right</align>
                 <aligny>top</aligny>
                 <label>$INFO[System.Time]</label>
@@ -1592,27 +1598,29 @@
                 <control type="label">
                     <description>Show Menu Bar Button</description>
                     <posx>890</posx>
-                    <posy>176</posy>
+                    <posy>180</posy>
                     <width>70</width>
                     <height>36</height>
                     <label>MENU</label>
                     <font>font11</font>
                     <aligny>center</aligny>
                     <align>left</align>
-                    <textcolor>ff323754</textcolor>
+                    <textcolor>ffa7a7a7</textcolor>
+					<shadowcolor>aa000000</shadowcolor>
                     <aspectratio>keep</aspectratio>
                 </control>
                  <control type="label">
                     <description>Show Menu Bar Button Focus</description>
                     <posx>890</posx>
-                    <posy>176</posy>
+                    <posy>180</posy>
                     <width>70</width>
                     <height>36</height>
                     <label>MENU</label>
                     <font>font11</font>
                     <aligny>center</aligny>
                     <align>left</align>
-                    <textcolor>ffffffff</textcolor>
+                    <textcolor>ffFFFFFF</textcolor>
+					<shadowcolor>aa242424</shadowcolor>
                     <visible>Control.HasFocus(5201)</visible>
                 </control>
                 <control type="button" id="5201">
@@ -1650,7 +1658,7 @@
                 <control type="button">
                     <description>Stop button by videowindow</description>
                     <posx>830</posx>
-                    <posy>180</posy>
+                    <posy>184</posy>
                     <width>28</width>
                     <height>28</height>
                     <label></label>
@@ -1658,14 +1666,14 @@
                     <onclick>stop</onclick>
                     <aligny>center</aligny>
                     <align>center</align>
-                    <texturefocus>buttons/stop_stream_white.png</texturefocus>
-                    <texturenofocus>buttons/stop_stream_navy.png</texturenofocus>
+                    <texturefocus>buttons/stop_stream_navy.png</texturefocus>
+                    <texturenofocus>buttons/stop_stream_white.png</texturenofocus>
                     <visible>Player.HasVideo</visible>
                 </control>
                 <control type="button" id="0001">
                     <description>Back</description>
                     <posx>990</posx>
-                    <posy>180</posy>
+                    <posy>184</posy>
                     <width>28</width>
                     <height>28</height>
                     <label></label>
@@ -1678,8 +1686,8 @@
                 </control>
                 <control type="button" id="4306">
                     <description>exit</description>
-                    <posx>1050</posx>
-                    <posy>180</posy>
+                    <posx>1045</posx>
+                    <posy>184</posy>
                     <width>28</width>
                     <height>28</height>
                     <label></label>
@@ -1880,7 +1888,7 @@
         <haspath>false</haspath>
         <font>font16</font>
         <textcolor>white</textcolor>
-        <shadowcolor>steelblue</shadowcolor>
+        <shadowcolor>black</shadowcolor>
         <wrapmultiline>false</wrapmultiline>
         <scrollspeed>50</scrollspeed>
         <scrollsuffix> - </scrollsuffix>
@@ -1938,7 +1946,7 @@
             <control type="button" id="4302">
                 <description>Navigate Left</description>
                 <posx>16</posx>
-                <posy>6</posy>
+                <posy>10</posy>
                 <width>18</width>
                 <height>18</height>
                 <label></label>
@@ -1954,7 +1962,7 @@
             <control type="button" id="4305">
                 <description>Navigate Right</description>
                 <posx>150</posx>
-                <posy>6</posy>
+                <posy>10</posy>
                 <width>18</width>
                 <height>18</height>
                 <label></label>
@@ -2005,35 +2013,37 @@
                 <aligny>center</aligny>
                 <align>center</align>
                 <scroll>true</scroll>
-                <textcolor>black</textcolor>
+                <textcolor>ffFFFFFF</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
                 <label>Categories</label>
                 <visible>false</visible>
             </control>
             <control type="button" id="4308">
                 <description>Categories</description>
-                <posx>10</posx>
-                <posy>17</posy>
-                <width>160</width>
-                <height>28</height>
-                <label>[UPPERCASE]$INFO[Control.GetLabel(7028)][/UPPERCASE]</label>
+                <posx>25</posx>
+                <posy>3</posy>
+                <width>150</width>
+                <height>50</height>
+                <!-- <label>[UPPERCASE]$INFO[Control.GetLabel(7028)][/UPPERCASE]</label> -->
                 <onleft>44306</onleft>
                 <onright>4312</onright>
                 <font>font11</font>
                 <aligny>center</aligny>
                 <align>center</align>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
+                <textcolor>ffFFFFFF</textcolor>
+				<shadowcolor>ff000000</shadowcolor>
+                <focusedcolor>ff92cc00</focusedcolor>
                 <scroll>true</scroll>
-                <texturefocus></texturefocus>
-                <texturenofocus></texturenofocus>
+                <texturefocus>buttons/categories_over.png</texturefocus>
+                <texturenofocus>buttons/categories.png</texturenofocus>
                 <visible>true</visible>
             </control>
             <control type="button" id="4312">
                 <description>SEARCH now list</description>
-                <posx>190</posx>
-                <posy>18</posy>
-                <width>28</width>
-                <height>28</height>
+                <posx>205</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
                 <onleft>4308</onleft>
                 <onright>4314</onright>
                 <label></label>
@@ -2046,10 +2056,10 @@
             </control>
             <control type="button" id="4314">
                 <description>Channel number keypad</description>
-                <posx>250</posx>
-                <posy>18</posy> 
-                <width>28</width>
-                <height>28</height>
+                <posx>260</posx>
+                <posy>3</posy> 
+                <width>50</width>
+                <height>50</height>
                 <onleft>4312</onleft>
                 <onright>4301</onright>
                 <label></label>
@@ -2063,10 +2073,10 @@
             </control>
             <control type="button" id="4301">
                 <description>Navigate to now</description>
-                <posx>310</posx>
-                <posy>18</posy>
-                <width>28</width>
-                <height>28</height>
+                <posx>315</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
                 <onleft>4314</onleft>
                 <onright>44313</onright>
                 <label></label>
@@ -2081,9 +2091,9 @@
             <control type="button" id="44313">
                 <description>Goto first channel number</description>
                 <posx>370</posx>
-                <posy>18</posy>
-                <width>28</width>
-                <height>28</height>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
                 <onleft>4301</onleft>
                 <onright>4321</onright>
                 <label></label>
@@ -2098,18 +2108,18 @@
 
             <control type="group">
                 <description>navi buttons bottom</description>
-                <posx>475</posx>
-                <posy>16</posy>
+                <posx>0</posx>
+                <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
 
 
                 <control type="button" id="4321">
                     <description>Autoplays</description>
-                    <posx>-40</posx>
-                    <posy>0</posy>
-                    <width>43</width>
-                    <height>39</height>
+                    <posx>435</posx>
+                    <posy>3</posy>
+                    <width>50</width>
+                    <height>50</height>
                     <font>font13</font>
                     <onleft>44313</onleft>
                     <onright>4322</onright>
@@ -2123,10 +2133,10 @@
                 </control>
                 <control type="button" id="4322">
                     <description>Remind</description>
-                    <posx>23</posx>
-                    <posy>0</posy>
-                    <width>43</width>
-                    <height>39</height>
+                    <posx>490</posx>
+                    <posy>3</posy>
+                    <width>50</width>
+                    <height>50</height>
                     <font>font13</font>
                     <onleft>4321</onleft>
                     <onright>4316</onright>
@@ -2140,13 +2150,13 @@
                 </control>
                 <control type="button" id="4316">
                     <description>Favourites</description>
-                    <posx>86</posx>
-                    <posy>0</posy>
-                    <width>43</width>
-                    <height>39</height>
+                    <posx>545</posx>
+                    <posy>3</posy>
+                    <width>50</width>
+                    <height>50</height>
                     <font>font13</font>
                     <onleft>4322</onleft>
-                    <onright>70100</onright>
+                    <onright>4310</onright>
                     <label></label>
                     <aligny>center</aligny>
                     <align>center</align>
@@ -2156,7 +2166,7 @@
                     <texturenofocus>buttons/Button blue fav.png</texturenofocus>
                 </control>
                 <control type="button" id="70100">
-                    <description>Gamezone</description>
+                    <description>Game Zone</description>
                     <posx>149</posx>
                     <posy>0</posy>
                     <width>43</width>
@@ -2169,6 +2179,7 @@
                     <align>center</align>
                     <aspectratio>keep</aspectratio>
 					<onclick></onclick>
+					<visible>false</visible>
                     <texturefocus>stvb-menu-o.png</texturefocus>
                     <texturenofocus>stvb-menu.png</texturenofocus>
 					<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fgames.png&amp;mode=4&amp;name=%5bCOLOR%20blueviolet%5d.GAME%20ZONE%20SECTION%20Updated%20Daily%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=47&quot;,return)</onclick>
@@ -2177,10 +2188,10 @@
 
             <control type="button" id="4310">
                 <description>NOW current list</description>
-                <posx>680</posx>
-                <posy>11</posy>      
-                <width>40</width>
-                <height>40</height>
+                <posx>600</posx>
+                <posy>3</posy>      
+                <width>50</width>
+                <height>50</height>
                 <onleft>70100</onleft>
                 <onright>4311</onright>
                 <label></label>
@@ -2194,12 +2205,12 @@
             </control>
             <control type="button" id="4311">
                 <description>NEXT now list</description>
-                <posx>730</posx>    
-                <posy>11</posy>
-                <width>40</width>
-                <height>40</height>
+                <posx>655</posx>    
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
                 <onleft>4310</onleft>
-                <onright>8000053</onright>
+                <onright>8000092</onright>
                 <label></label>
                 <font>font13</font>
                 <aligny>center</aligny>
@@ -2241,14 +2252,14 @@
                     <texturenofocus>buttons/button_arrowdown.png</texturenofocus>
                 </control>
             </control>
-            <control type="button" id="8000053">
+            <control type="button" id="8000092">
                 <description>Audio</description>
-                <posx>780</posx>
-                <posy>11</posy>
-                <width>40</width>
-                <height>40</height>
+                <posx>720</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
                 <onleft>4311</onleft>
-                <onright>8000054</onright>
+                <onright>8000093</onright>
                 <label></label>
                 <font>font13</font>
                 <align>center</align>
@@ -2259,14 +2270,14 @@
                 <texturenofocus>audio.png</texturenofocus>
                 <onclick>ActivateWindow(10124)</onclick>
             </control>
-            <control type="button" id="8000054">
+            <control type="button" id="8000093">
                 <description>Video</description>
-                <posx>830</posx>
-                <posy>11</posy>
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000053</onleft>
-                <onright>8000055</onright>
+                <posx>775</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000092</onleft>
+                <onright>8000094</onright>
                 <label></label>
                 <font>font13</font>
                 <align>center</align>
@@ -2277,14 +2288,14 @@
                 <texturenofocus>video.png</texturenofocus>
                 <onclick>ActivateWindow(10123)</onclick>
             </control>
-            <control type="button" id="8000055">
+            <control type="button" id="8000094">
                 <description>Settings</description>
-                <posx>880</posx>
-                <posy>11</posy>
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000054</onleft>
-                <onright>4317</onright>
+                <posx>830</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000093</onleft>
+                <onright>8000095</onright>
                 <label></label>
                 <font>font13</font>
                 <align>center</align>
@@ -2293,110 +2304,78 @@
                 <focusedcolor>white</focusedcolor>
                 <texturefocus>settings-over.png</texturefocus>
                 <texturenofocus>settings.png</texturenofocus>
-                <onclick>ActivateWindow(10140)</onclick>
-            </control>			
-            <control type="button" id="4317">
+                <onclick>Addon.OpenSettings(plugin.video.maniaguidesm)</onclick>
+            </control>		
+            <control type="button" id="8000095">
                 <description>UK Cal</description>
-                <posx>930</posx>
-                <posy>11</posy>
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000055</onleft>
-                <onright>8000057</onright>
-                <label></label>
-                <font>font13</font>
+                <posx>885</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000094</onleft>
+                <onright>8000096</onright>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
-                <texturefocus>epl-o.png</texturefocus>
-                <texturenofocus>epl.png</texturenofocus>
-				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fcalendar.png&amp;mode=2005&amp;name=%5bCOLOR%20beige%5d.View%20Calendar%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fsportsmania.rocks%2fsites%2fukcalendar.html&quot;,return)</onclick>
+                <texturefocus>uk-cal-o.png</texturefocus>
+                <texturenofocus>uk-cal.png</texturenofocus>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fcalendar.png&amp;mode=2005&amp;name=%5bCOLOR%20beige%5d.View%20Calendar%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fultimatemania.rocks%2fukcalendar.html&quot;,return)</onclick>
+            </control>			
+            <control type="button" id="8000096">
+                <description>USA Cal</description>
+                <posx>940</posx>
+                <posy>3</posy>
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000095</onleft>
+                <onright>8000097</onright>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturefocus>usa-cal-o.png</texturefocus>
+                <texturenofocus>usa-cal.png</texturenofocus>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2ftest.png&amp;mode=2005&amp;name=%5bCOLOR%20beige%5d.View%20USA%20Calendar%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fultimatemania.rocks%2fusacalendar.html&quot;,return)</onclick>
             </control>
 
-            <control type="button" id="8000057">
-                <description>US-CAL</description>
-                <posx>980</posx>
-                <posy>11</posy> 
-                <width>40</width>
-                <height>40</height>
-                <onleft>4317</onleft>
-                <onright>8000058</onright>
+            <control type="button" id="8000097">
+                <description>GAMEZONE</description>
+                <posx>1005</posx>
+                <posy>3</posy> 
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000096</onleft>
+                <onright>8000099</onright>
                 <label></label>
                 <font>font13</font>
                 <aligny>center</aligny>
                 <align>center</align>
-                <textcolor>black</textcolor>
-                <focusedcolor>white</focusedcolor>
-                <texturefocus>uk-o.png</texturefocus>
-                <texturenofocus>uk.png</texturenofocus>
-				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2ftest.png&amp;mode=2005&amp;name=%5bCOLOR%20beige%5d.View%20USA%20Calendar%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fsportsmania.rocks%2fsites%2fusacalendar.html&quot;,return)</onclick>
+                <texturefocus>gamezone-o.png</texturefocus>
+                <texturenofocus>gamezone.png</texturenofocus>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fgames.png&amp;mode=4&amp;name=%5bCOLOR%20blueviolet%5d.GAME%20ZONE%20SECTION%20Updated%20Daily%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=47&quot;,return)</onclick>
             </control>
-            <control type="button" id="8000058">
+            <control type="button" id="8000098">
                 <description>MOD</description>
-                <posx>1030</posx>
-                <posy>11</posy> 
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000057</onleft>
-                <onright>8000059</onright>
+                <posx>1060</posx>
+                <posy>3</posy> 
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000097</onleft>
+                <onright>8000099</onright>
                 <label></label>
                 <font>font13</font>
                 <aligny>center</aligny>
                 <align>center</align>
-                <textcolor>grey</textcolor>
-                <focusedcolor>black</focusedcolor>
-                <texturefocus></texturefocus>
-                <texturenofocus></texturenofocus>
+                <texturefocus>mod-o.png</texturefocus>
+                <texturenofocus>mod.png</texturenofocus>
                 <visible>false</visible>
-				<onclick></onclick>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fmovies.png&amp;mode=2003&amp;name=%5bCOLOR%20darkcyan%5d.Movies%20on%20Demand%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fultimatemania.rocks%2fapisprotected%2fmoviesvod.php&quot;,return)</onclick>
             </control>
-            <control type="button" id="8000059">
+            <control type="button" id="8000099">
                 <description>SOD</description>
-                <posx>1080</posx>
-                <posy>11</posy> 
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000058</onleft>
-                <onright>8000060</onright>
-                <label></label>
-                <font>font13</font>
-                <aligny>center</aligny>
-                <align>center</align>
-                <textcolor>grey</textcolor>
-                <focusedcolor>black</focusedcolor>
-                <texturefocus>youtube-o.png</texturefocus>
-                <texturenofocus>youtube.png</texturenofocus>
-                <visible>true</visible>
-				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fcup.png&amp;mode=2003&amp;name=%5bCOLOR%20cyan%5d.Sports%20On%20Demand%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fsportsmania.rocks%2fapisprotected%2fchannels1.php&quot;,return)</onclick>
-            </control>	
-            <control type="button" id="8000060">
-                <description>empty1</description>
-                <posx>1130</posx>
-                <posy>11</posy> 
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000059</onleft>
-                <onright>8000061</onright>
-                <label></label>
-                <font>font13</font>
-                <aligny>center</aligny>
-                <align>center</align>
-                <textcolor>grey</textcolor>
-                <focusedcolor>black</focusedcolor>
-                <texturefocus>matchday-o.png</texturefocus>
-                <texturenofocus>matchday.png</texturenofocus>
-                <visible>true</visible>
-				<onclick></onclick>
-            </control>	
-            <control type="button" id="8000061">
-                <description>empty2</description>
-                <posx>1180</posx>
-                <posy>11</posy> 
-                <width>40</width>
-                <height>40</height>
-                <onleft>8000060</onleft>
-                <onright>44306</onright>
+                <posx>1115</posx>
+                <posy>3</posy> 
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000097</onleft>
+                <onright>8000100</onright>
                 <label></label>
                 <font>font13</font>
                 <aligny>center</aligny>
@@ -2406,15 +2385,35 @@
                 <texturefocus>sod-o.png</texturefocus>
                 <texturenofocus>sod.png</texturenofocus>
                 <visible>true</visible>
-				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fepl1.png&amp;mode=4&amp;name=%5bCOLOR%20chartreuse%5d.Match%20Day%20Section%202%20(Recommended)%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=79&quot;,return)</onclick>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fcup.png&amp;mode=2003&amp;name=%5bCOLOR%20cyan%5d.Sports%20On%20Demand%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=http%3a%2f%2fultimatemania.rocks%2fapisprotected%2fchannels1.php&quot;,return)</onclick>
+            </control>	
+
+            <control type="button" id="8000100">
+                <description>EPL</description>
+                <posx>1170</posx>
+                <posy>3</posy> 
+                <width>50</width>
+                <height>50</height>
+                <onleft>8000099</onleft>
+                <onright>44306</onright>
+                <label></label>
+                <font>font13</font>
+                <aligny>center</aligny>
+                <align>center</align>
+                <textcolor>grey</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <texturefocus>epl-o.png</texturefocus>
+                <texturenofocus>epl.png</texturenofocus>
+                <visible>true</visible>
+				<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.sportsmania/?date&amp;description&amp;iconimage=special%3a%2f%2fhome%2faddons%2fplugin.video.sportsmania%2fresources%2fepl1.png&amp;mode=4&amp;name=%5bCOLOR%20chartreuse%5d.Match%20Day%20Section%201%5b%2fCOLOR%5d&amp;page&amp;play&amp;url=53&quot;,return)</onclick>
             </control>			
             <control type="button" id="44306">
                 <description>menubar exit</description>
-                <posx>1240</posx>
+                <posx>1235</posx>
                 <posy>17</posy> 
                 <width>28</width>
                 <height>28</height>
-                <onleft>8000061</onleft>
+                <onleft>8000100</onleft>
                 <onright>4308</onright>
                 <textcolor>ffffffff</textcolor>
                 <font>font13</font>
@@ -2427,23 +2426,6 @@
                 <texturenofocus>buttons/button_power_navy.png</texturenofocus>
             </control>
         </control>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--         # CatBar # -->
         <control type="image" id="7000">

@@ -419,7 +419,7 @@ class TVGuide(xbmcgui.WindowXML):
             return super(TVGuide, self).getControl(controlId)
         except Exception as detail:
             #log(traceback.print_stack())
-            #xbmc.log("EXCEPTION: (plugin.video.maniaguidesm) TVGuide.getControl %s" % detail, xbmc.LOGERROR)
+            #xbmc.log("EXCEPTION: (plugin.video.maniaguide) TVGuide.getControl %s" % detail, xbmc.LOGERROR)
             if controlId in self.ignoreMissingControlIds:
                 return None
             if not self.isClosing:
@@ -838,7 +838,7 @@ class TVGuide(xbmcgui.WindowXML):
                     icon = addon.getAddonInfo('icon')
             else:
                 name = "Playlist"
-                icon = xbmcaddon.Addon('plugin.video.maniaguidesm').getAddonInfo('icon')
+                icon = xbmcaddon.Addon('plugin.video.maniaguide').getAddonInfo('icon')
         stream = ""
         title = ""
         if ADDON.getSetting('stream.addon.list') == 'true':
@@ -1164,7 +1164,7 @@ class TVGuide(xbmcgui.WindowXML):
         elif action.getId() in COMMAND_ACTIONS["VOD"]:
             self.showVODTV()
         else:
-            xbmc.log('[plugin.video.maniaguidesm] Unhandled ActionId: ' + str(action.getId()), xbmc.LOGDEBUG)
+            xbmc.log('[plugin.video.maniaguide] Unhandled ActionId: ' + str(action.getId()), xbmc.LOGDEBUG)
 
 
 
@@ -1236,7 +1236,7 @@ class TVGuide(xbmcgui.WindowXML):
             if program is not None:
                 self._showContextMenu(program)
         else:
-            xbmc.log('[plugin.video.maniaguidesm] quick epg Unhandled ActionId: ' + str(action.getId()), xbmc.LOGDEBUG)
+            xbmc.log('[plugin.video.maniaguide] quick epg Unhandled ActionId: ' + str(action.getId()), xbmc.LOGDEBUG)
 
     def pip_toggle(self):
         if ADDON.getSetting('epg.video.pip') == 'false':
@@ -2585,7 +2585,7 @@ class TVGuide(xbmcgui.WindowXML):
             elif self.getControl(self.C_MAIN_MENUBAR) and ADDON.getSetting('action.bar') == 'true' and ADDON.getSetting('down.action') == 'true':
                 self._showControl(self.C_MAIN_MENUBAR)
                 self.mode = None
-                self.setFocusId(self.C_MAIN_MOUSE_SEARCH)
+                self.setFocusId(self.C_MAIN_MOUSE_CATEGORIES)
                 return
             self.focusPoint.y = self.epgView.top
             self.onRedrawEPG(self.channelIdx + CHANNELS_PER_PAGE, self.viewStartDate,

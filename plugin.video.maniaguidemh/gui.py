@@ -2585,7 +2585,7 @@ class TVGuide(xbmcgui.WindowXML):
             elif self.getControl(self.C_MAIN_MENUBAR) and ADDON.getSetting('action.bar') == 'true' and ADDON.getSetting('down.action') == 'true':
                 self._showControl(self.C_MAIN_MENUBAR)
                 self.mode = None
-                self.setFocusId(self.C_MAIN_MOUSE_SEARCH)
+                self.setFocusId(self.C_MAIN_MOUSE_CATEGORIES)
                 return
             self.focusPoint.y = self.epgView.top
             self.onRedrawEPG(self.channelIdx + CHANNELS_PER_PAGE, self.viewStartDate,

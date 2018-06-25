@@ -157,7 +157,7 @@ provider-name="rolica, ManiaTeam">
     </extension>
 </addon>
 
-<addon id="plugin.video.sportsmania" name="SportsMania" version="3.9.4" provider-name="The Mania Team">
+<addon id="plugin.video.sportsmania" name="SportsMania" version="3.9.5" provider-name="The Mania Team">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.urlresolver" version="0.0.1"/>

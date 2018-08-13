@@ -260,7 +260,7 @@ def Login():
                 stat = True
 
         if stat:
-            a = net.http_GET('http://' + THESITE + '/payments/api/matrix/channels', headers={'User-Agent': UA}).content
+            a = net.http_GET('http://'+THESITE+'/reloaded.php?do=channels',headers={'User-Agent' :UA}).content
             f = open(channeljs, mode='w')
             f.write(a)
             f.close()
@@ -298,8 +298,7 @@ def downloadchannel():
     if sessionExpired():
         Login()
     net.set_cookies(cookie_jar)
-    a = net.http_GET('http://' + THESITE + '/site/MatrixUp/payments/api/matrix/channels',
-                     headers={'User-Agent': UA}).content
+    a = net.http_GET('http://'+THESITE+'/reloaded.php?do=channels',headers={'User-Agent' :UA}).content
     f = open(channeljs, mode='w')
     f.write(a)
     f.close()
@@ -404,56 +403,72 @@ def CATEGORIES():
     # CheckChannels()
     link = json.loads(server())
 
-    data2 = link['channels']
-    lista = []
-    for k in data2:
-        # print'id: '+k['cat_id']
-        lista.append(k['cat_id'])
-
-    if ontapp1 > ontapp2:
-        a = '[%s]\n' % PLUGIN
-        f = open(STVBINI, mode='w')
-        f.write(a)
-        f.close()
-
-    uniques = []
-    uniquesurl = []
-    data = link['categories']
-    ret = ''
-    for j in data:
-        if j in lista:
-            url = j
-            name = data[j].encode("utf-8")
-
-            if name not in uniques:
-                uniques.append(name)
-                uniquesurl.append(url)
-                if ".GAME ZONE" in name:
-                    # print"gamezone::::: "+url
-                    addDir('[COLOR blueviolet]' + name + '[/COLOR]', url, 4, MEDIA_URL + 'games.png', '', '', '')
-                elif ".Match Day" in name:
-                    if '2' in name:
-                        name = name+' (Recommended)'
-                    addDir('[COLOR chartreuse]'+name+'[/COLOR]',url,4,MEDIA_URL+'epl1.png','','','')
-                elif "Aussie Mania" in name:
-                    addDir('[COLOR yellow]' + name + '[/COLOR]', url, 4, MEDIA_URL + 'aus.png', '', '', '')
-                else:
-                    addDir(name, url, 4, MEDIA_URL + url + '.png', '', '', '')
-
-    if ontapp1 > ontapp2:
-        # print'################# CREATING INI ########################'
-        data = link['channels']
-        for field in data:
-            id = str(field['id'])
-            name = field['title'].encode("utf-8")
-            if ".GAME ZONE" in name:
-
-                CreateInitNow('[COLOR blueviolet]' + name + '[/COLOR]', url, 2, MEDIA_URL + 'games.png', '', '', '')
-            elif ".EPL Match Day" in name:
-                CreateInitNow('[COLOR aquamarine]' + name + '[/COLOR]', url, 2, MEDIA_URL + 'premiere.jpg', '', '', '')
+    for c in link:
+        name = c['_id'].encode("utf-8");
+        catName = name.lower().replace(" ","_")
+        if ".GAME ZONE" in name:
+            addDir('[COLOR blueviolet]' + name + '[/COLOR]', catName, 4, MEDIA_URL+'games.png','','','')
+        elif ".Match Day" in name:
+            if '2' in name:
+                addDir('[COLOR chartreuse]'+name + ' (Recommended)[/COLOR]', catName, 4, MEDIA_URL+'epl1.png','','','')
             else:
-                iconimage = id + '.png'
-                CreatIniNow(name, id, 2, MEDIA_URL + iconimage, 'False', '', '')
+                addDir('[COLOR chartreuse]' + name + ' (Recommended)[/COLOR]', catName, 4,
+                       MEDIA_URL + 'epl1.png', '', '', '')
+        elif "Aussie Mania" in name:
+            addDir('[COLOR yellow]' + name + '[/COLOR]', catName,4, MEDIA_URL+"aus.png",'','','')
+        else:
+            addDir(name,catName, 4, MEDIA_URL+catName+".png",'','','')
+
+    # data2 = link['channels']
+    # lista = []
+    # for k in data2:
+    #     # print'id: '+k['cat_id']
+    #     lista.append(k['cat_id'])
+
+    # if ontapp1 > ontapp2:
+    #     a = '[%s]\n' % PLUGIN
+    #     f = open(STVBINI, mode='w')
+    #     f.write(a)
+    #     f.close()
+    #
+    # uniques = []
+    # uniquesurl = []
+    # data = link['categories']
+    # ret = ''
+    # for j in data:
+    #     if j in lista:
+    #         url = j
+    #         name = data[j].encode("utf-8")
+    #
+    #         if name not in uniques:
+    #             uniques.append(name)
+    #             uniquesurl.append(url)
+    #             if ".GAME ZONE" in name:
+    #                 # print"gamezone::::: "+url
+    #                 addDir('[COLOR blueviolet]' + name + '[/COLOR]', url, 4, MEDIA_URL + 'games.png', '', '', '')
+    #             elif ".Match Day" in name:
+    #                 if '2' in name:
+    #                     name = name+' (Recommended)'
+    #                 addDir('[COLOR chartreuse]'+name+'[/COLOR]',url,4,MEDIA_URL+'epl1.png','','','')
+    #             elif "Aussie Mania" in name:
+    #                 addDir('[COLOR yellow]' + name + '[/COLOR]', url, 4, MEDIA_URL + 'aus.png', '', '', '')
+    #             else:
+    #                 addDir(name, url, 4, MEDIA_URL + url + '.png', '', '', '')
+    #
+    # if ontapp1 > ontapp2:
+    #     # print'################# CREATING INI ########################'
+    #     data = link['channels']
+    #     for field in data:
+    #         id = str(field['id'])
+    #         name = field['title'].encode("utf-8")
+    #         if ".GAME ZONE" in name:
+    #
+    #             CreateInitNow('[COLOR blueviolet]' + name + '[/COLOR]', url, 2, MEDIA_URL + 'games.png', '', '', '')
+    #         elif ".EPL Match Day" in name:
+    #             CreateInitNow('[COLOR aquamarine]' + name + '[/COLOR]', url, 2, MEDIA_URL + 'premiere.jpg', '', '', '')
+    #         else:
+    #             iconimage = id + '.png'
+    #             CreatIniNow(name, id, 2, MEDIA_URL + iconimage, 'False', '', '')
 
     if os.path.exists(cookie_jar) == True:
         try:
@@ -762,20 +777,23 @@ def GENRES(name, url):
 
     # else:
     link = json.loads(server())
-    data = link['channels']
-    for field in data:
-        id = field['id']
-        title = field['title'].encode("utf-8")
-        genre = field['cat_id']
-        iconimage = image + id + '.png'
-        if url == genre:
-            if ':' in title:
+    type(link)
+    for field in link:
+        channels = field['channels']
+        name = field['_id']
+        for ch in channels:
+            cid = ch['id']
+            title = ch['title'].encode("utf-8")
+            genre = name.lower().replace(" ", "_")
+            iconimage = image + cid + '.png'
+            if url == genre:
+                if ':' in title:
 
-                TITLEHACK = title.split(':', 1)[1].replace(' HD', '')
-                if len(TITLEHACK) > 3:
-                    addDir(title, id, 2, iconimage, 'False', '', '')
-            else:
-                addDir(title, id, 2, iconimage, 'False', '', '')
+                    TITLEHACK = title.split(':', 1)[1].replace(' HD', '')
+                    if len(TITLEHACK) > 3:
+                        addDir(title, cid, 2, iconimage, 'False', '', '')
+                else:
+                    addDir(title, cid, 2, iconimage, 'False', '', '')
 
     if url == '79':
         try:SportsOnDemand('http://'+THESITE+'/apisprotected/plp.php')
@@ -1246,17 +1264,21 @@ def PLAY_STREAM(name, url, iconimage, play, description):
     if len(url) > 7:
         stream_url = url
 
+    net.set_cookies(cookie_jar)
+    stream_url = net.http_GET('http://' + THESITE + '/reloaded.php?do=stream&type=rtmp&channel=%s' % url,
+                              headers={'User-Agent': UA}).content + timeout()
+    tmpUrl = str(stream_url)
+    print stream_url
+    if stream_url == '':
+        return Show_Down()
+    elif tmpUrl.startswith('direct'):
+        playAPI(name, stream_url.replace('direct#', '', 2), '')
     else:
-        net.set_cookies(cookie_jar)
-        stream_url = net.http_GET('http://' + THESITE + '/payments/api/matrix/channel/%s' % url,
-                                  headers={'User-Agent': UA}).content + timeout()
-        if stream_url == '':
-            return Show_Down()
-    liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
-    liz.setInfo(type='Video', infoLabels={'Title': description})
-    liz.setProperty("IsPlayable", "true")
-    liz.setPath(stream_url)
-    xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
+        liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
+        liz.setInfo(type='Video', infoLabels={'Title': description})
+        liz.setProperty("IsPlayable", "true")
+        liz.setPath(stream_url)
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 
 
 def PLAY_FROM_EVENTS(name, url, iconimage, play, description):
@@ -1466,7 +1488,7 @@ def RefreshChannels():
     if sessionExpired() or os.path.exists(cookie_jar) == False:
         Login()
     net.set_cookies(cookie_jar)
-    a = net.http_GET('http://' + THESITE + '/payments/api/matrix/channels', headers={'User-Agent': UA}).content
+    a = net.http_GET('http://'+THESITE+'/reloaded.php?do=channels',headers={'User-Agent' :UA}).content
     f = open(channeljs, mode='w')
     f.write(a)
     f.close()

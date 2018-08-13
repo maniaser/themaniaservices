@@ -400,22 +400,23 @@ def CATEGORIES():
 
     for c in link:
         name = c['_id'].encode("utf-8");
+        catName = name.lower().replace(" ","_")
         if ".GAME ZONE" in name:
-            addDir('[COLOR blueviolet]' + name + '[/COLOR]', name.lower().replace( " ","_" ), 4, MEDIA_URL+'games.png','','','')
+            addDir('[COLOR blueviolet]' + name + '[/COLOR]', catName, 4, MEDIA_URL+'games.png','','','')
         elif ".Match Day" in name:
             if '2' in name:
-                addDir('[COLOR chartreuse]'+name + ' (Recommended)[/COLOR]',name.lower().replace(" ","_"), 4, MEDIA_URL+'epl1.png','','','')
+                addDir('[COLOR chartreuse]'+name + ' (Recommended)[/COLOR]', catName, 4, MEDIA_URL+'epl1.png','','','')
             else:
-                addDir('[COLOR chartreuse]' + name + ' (Recommended)[/COLOR]', name.lower().replace(" ", "_"), 4,
+                addDir('[COLOR chartreuse]' + name + ' (Recommended)[/COLOR]', catName, 4,
                        MEDIA_URL + 'epl1.png', '', '', '')
         elif "Aussie Mania" in name:
-            addDir('[COLOR yellow]' + name + '[/COLOR]',name.lower().replace(" ","_"),4, MEDIA_URL+"aus.png",'','','')
+            addDir('[COLOR yellow]' + name + '[/COLOR]', catName,4, MEDIA_URL+"aus.png",'','','')
         else:
-            addDir(name,name.lower().replace(" ","_"), 4, MEDIA_URL+"",'','','')
+            addDir(name,catName, 4, MEDIA_URL+catName+".png",'','','')
 
 
-    data2 = link['channels']
-    lista = []
+    #data2 = link['channels']
+    #lista = []
     # for k in data2:
     #     #print'id: '+k['cat_id']
     #     lista.append(k['cat_id'])
@@ -732,6 +733,7 @@ def SportsOnDemand(url):
         
         
 def playAPI(name,url,iconimage):
+    print url
     if not "http" in url:
       if not "rtmp" in url:
        
@@ -1250,32 +1252,29 @@ def PLAY_DEMAND_STREAM(name, url, iconimage,cookie):
 
     
 def PLAY_STREAM(name, url, iconimage, play, description):
-
-
     if sessionExpired() or os.path.exists(cookie_jar) == False:
         Login()
     
     if play =='GET_EVENT':
         url=PLAY_FROM_EVENTS(name, url, iconimage, play, description)
 
-           
-        if not url:
-            return Show_Cover()
-         
-    # if len(url)>7:
-    #    stream_url = url
-    #
-    # else:
+    if not url:
+        return Show_Cover()
+
     net.set_cookies(cookie_jar)
-    stream_url= net.http_GET('http://'+THESITE+'/reloaded.php?do=stream&channel=%s'%url,headers={'User-Agent' :UA}).content+timeout()
+    stream_url= net.http_GET('http://'+THESITE+'/reloaded.php?do=stream&type=rtmp&channel=%s'%url,headers={'User-Agent' :UA}).content+timeout()
+    tmpUrl = str(stream_url)
+    print stream_url
     if stream_url=='':
         return Show_Down()
-    liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
-    liz.setInfo(type='Video', infoLabels={'Title':description})
-    liz.setProperty("IsPlayable","true")
-    liz.setPath(stream_url)
-    xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz) 
-
+    elif tmpUrl.startswith('direct'):
+        playAPI(name,stream_url.replace('direct#','',2),'')
+    else:
+        liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
+        liz.setInfo(type='Video', infoLabels={'Title':description})
+        liz.setProperty("IsPlayable","true")
+        liz.setPath(stream_url)
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 
 
 def PLAY_FROM_EVENTS(name, url, iconimage, play, description):
@@ -1427,10 +1426,7 @@ def setView(content, viewType):
                 xbmcplugin.setContent(int(sys.argv[1]), content)
         if ADDON.getSetting('auto-view') == 'true':#<<<----see here if auto-view is enabled(true) 
                 xbmc.executebuiltin("Container.SetViewMode(%s)" % ADDON.getSetting(viewType) )#<<<-----then get the view type
-                      
-                          
-            
-    
+
 def get_params():
         param=[]
         paramstring=sys.argv[2]
@@ -1521,7 +1517,6 @@ def ping(host):
 
     # Pinging
     return system_call("ping " + parameters + " " + host) == 0
-
 
 
 def AddProxy(url):

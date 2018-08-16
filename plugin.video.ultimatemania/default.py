@@ -8,23 +8,20 @@ import talks
 from threading import Timer
 import json
 
-PLUGIN='plugin.video.ultimatemania'
+PLUGIN = 'plugin.video.ultimatemania'
 ADDON = xbmcaddon.Addon(id=PLUGIN)
 SETTINGS = xbmc.translatePath(os.path.join(ADDON.getAddonInfo('profile'),'settings.xml'))
-image='http://xunitytalk.com/stvb/'
+image = 'http://xunitytalk.com/stvb/'
 MEDIA_URL = 'special://home/addons/{0}/resources/'.format('plugin.video.ultimatemania')
-auth=ADDON.getSetting('authtoken')
-ontapp1=int(ADDON.getSetting('ontapp_id_1'))
-ontapp2=int(ADDON.getSetting('ontapp_id_2'))
+auth = ADDON.getSetting('authtoken')
+ontapp1 = int(ADDON.getSetting('ontapp_id_1'))
+ontapp2 = int(ADDON.getSetting('ontapp_id_2'))
 
-USER='[COLOR yellow]'+ADDON.getSetting('snusername')+'[/COLOR]'
-updateid= int(ADDON.getSetting('id'))
-THESITE='ultimatemania.rocks'
+USER = '[COLOR yellow]'+ADDON.getSetting('snusername')+'[/COLOR]'
+updateid = int(ADDON.getSetting('id'))
+THESITE = 'ultimatemania.rocks'
 
-#if ADDON.getSetting('hlsenable')=='true':
-#   UA='iPhone'
-#else:    
-UA='XBMC'
+UA = 'XBMC'
 
 net=net.Net()
 
@@ -103,7 +100,7 @@ def TryAgain():
      CATEGORIES()
  
         
-site='http://'+THESITE+'/site/live-tv/'
+site = 'http://'+THESITE+'/site/live-tv/'
 
 
 datapath = xbmc.translatePath(ADDON.getAddonInfo('profile'))
@@ -111,8 +108,8 @@ cookie_path = os.path.join(datapath, 'cookies')
 cookie_jar = os.path.join(cookie_path, THESITE+"1MAIN_amember_new_matrix.lwp")
 cookie_amember = os.path.join(cookie_path, THESITE+"_amember_.lwp")
 cookies_123 = os.path.join(cookie_path, '123.lwp')
-channeljs=os.path.join(cookie_path, "channels.js")
-paki=os.path.join(datapath, "paki")
+channeljs = os.path.join(cookie_path, "channels.js")
+paki = os.path.join(datapath, "paki")
 
 if os.path.exists(cookie_path) == False:
       os.makedirs(cookie_path)
@@ -131,19 +128,19 @@ def checksub():
    html = net.http_GET('http://ultimatemania.rocks/user_test.php').content
    link=json.loads(html)
    for field in link:
-      exp =field['exp']
+      exp = field['exp']
       try:
-         EXP=datetime.datetime.strptime(exp,  '%Y-%m-%d').strftime('%A %d %B %Y')
+         EXP = datetime.datetime.strptime(exp,  '%Y-%m-%d').strftime('%A %d %B %Y')
       except TypeError:
-         EXP=datetime.datetime(*(time.strptime(exp,  '%Y-%m-%d')[0:6])).strftime('%A %d %B %Y')
+         EXP = datetime.datetime(*(time.strptime(exp,  '%Y-%m-%d')[0:6])).strftime('%A %d %B %Y')
      # EXP=datetime.datetime.strptime(exp, '%Y-%m-%d').strftime('%A %d %B %Y')
-      name=field['name']
-      status=field['status'].title()
+      name = field['name']
+      status = field['status'].title()
       if 'Active' in status:
-         status='[COLOR green]%s[/COLOR]'%status
+         status ='[COLOR green]%s[/COLOR]'%status
       else:
-         status='[COLOR red]%s[/COLOR]'%status     
-      TITLE='[COLOR white]%s[/COLOR] - %s'% (name,status)  
+         status = '[COLOR red]%s[/COLOR]'%status
+      TITLE = '[COLOR white]%s[/COLOR] - %s'% (name,status)
       addDir(TITLE,'',2007,'','','','')
       addDir('Expires - '+EXP,'',2007,'','','','')
       addDir('','',2007,'','','','')
@@ -158,7 +155,7 @@ def resetpass():
     
     get = net.http_POST(loginurl, {'login':ADDON.getSetting('snusername')}, headers).content
 
-    message=re.compile('"error":\["(.+?)"\]').findall(get)[0]
+    message = re.compile('"error":\["(.+?)"\]').findall(get)[0]
     try:
         line1 = message.split('.')[0]
         line2 = message.split('.')[1]
@@ -218,10 +215,10 @@ def Login():
     import time
     TIME = time.time()- 3600
     
-    data={'amember_login':username,'amember_pass':password,'login_attempt_id':str(TIME).split('.')[0],'remember_login':'1'} 
+    data = {'amember_login':username,'amember_pass':password,'login_attempt_id':str(TIME).split('.')[0],'remember_login':'1'}
   
 
-    headers={'Accept':'*/*',
+    headers = {'Accept':'*/*',
     'Accept-Encoding':'gzip,deflate,sdch',
     'Accept-Language':'en-US,en;q=0.8',
     'Connection':'keep-alive',
@@ -255,15 +252,15 @@ def Login():
        net.save_cookies(cookie_jar)
        net.set_cookies(cookie_jar)
        sub = net.http_GET('http://ultimatemania.rocks/user_test.php').content
-       subs=json.loads(sub)
+       subs = json.loads(sub)
        stat = False
        for field in subs:
-            status=field['status'].title()
+            status = field['status'].title()
             if 'Active' in status:
                  stat = True
 	
        if stat:		
-            a=net.http_GET('http://ultimatemania.rocks/matrixtest.php?do=getStreamChannels',headers={'User-Agent' :UA}).content
+            a=net.http_GET('http://ultimatemania.rocks/reloaded.php?do=channels',headers={'User-Agent' :UA}).content
             f = open(channeljs, mode='w')
             f.write(a)
             f.close()
@@ -276,8 +273,8 @@ def Login():
             return False
     if 'false' in html:
        import json
-       link=json.loads(html)
-       error=link['error']
+       link = json.loads(html)
+       error = link['error']
        dialog = xbmcgui.Dialog()
        dialog.ok(THESITE.upper(), '',str(error).replace("[u'",'').replace("']",''), "")
        dialog.ok(THESITE.upper(), '','We Will Exit Now', "")
@@ -297,7 +294,7 @@ def downloadchannel():
     if sessionExpired():
         Login()
     net.set_cookies(cookie_jar)
-    a=net.http_GET('http://ultimatemania.rocks/matrixtest.php?do=getStreamChannels').content
+    a = net.http_GET('http://ultimatemania.rocks/reloaded.php?do=channels').content
     f = open(channeljs, mode='w')
     f.write(a)
     f.close()
@@ -315,14 +312,9 @@ def getday():
 
 def sessionExpired():
    
-    expiry=ADDON.getSetting('login_time')
-
-
-    now        = datetime.datetime.today()
- 
-    
+    expiry = ADDON.getSetting('login_time')
+    now = datetime.datetime.today()
     prev = parse_date(expiry)
-
 
     return (now > prev)
     
@@ -346,14 +338,14 @@ def RefreshChannels():
     if sessionExpired() or os.path.exists(cookie_jar) == False:
         Login()
     net.set_cookies(cookie_jar)
-    a=net.http_GET('http://ultimatemania.rocks/matrixtest.php?do=getStreamChannels',headers={'User-Agent' :UA}).content
+    a = net.http_GET('http://ultimatemania.rocks/reloaded.php?do=channels',headers={'User-Agent' :UA}).content
     f = open(channeljs, mode='w')
     f.write(a)
     f.close()
     return a
 	
 def CheckChannels():
-    update=OPEN_URL('http://xty.me/xunitytalk/addons/plugin.video.offside/update.txt')
+    update = OPEN_URL('http://xty.me/xunitytalk/addons/plugin.video.offside/update.txt')
     ADDON.setSetting('pakauth',re.compile('<pakauth>(.+?)</pakauth>').findall(update)[0]) 
     ADDON.setSetting('pakurl',re.compile('<pakurl>(.+?)</pakurl>').findall(update)[0])
 
@@ -369,7 +361,7 @@ def cleanHex(text):
 
 def CreatIniNow(name,url,mode,iconimage,play,date,description,page=''):
         u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&play="+urllib.quote_plus(play)+"&date="+urllib.quote_plus(date)+"&description="+urllib.quote_plus(description)+"&page="+str(page)
-        a=name.replace('-[US]','').replace('-[EU]','').replace('[COLOR yellow]','').replace('[/COLOR]','').replace(' GB','').replace(' (G)','').replace(' HD','').replace(' EU','')+'='+u
+        a = name.replace('-[US]','').replace('-[EU]','').replace('[COLOR yellow]','').replace('[/COLOR]','').replace(' GB','').replace(' (G)','').replace(' HD','').replace(' EU','')+'='+u
         f = open(STVBINI, mode='a')
         f.write(a+'\n')
         f.close()           
@@ -379,59 +371,23 @@ def CATEGORIES():
     #CheckChannels()
     link = json.loads(server())
 
-
-    data2 = link['channels']
-    lista = []
-    for k in data2:
-        #print 'id: '+k['cat_id']
-        lista.append(k['cat_id'])
-    
-    if ontapp1 > ontapp2:
-        a='[%s]\n'% PLUGIN
-        f = open(STVBINI, mode='w')
-        f.write(a)
-        f.close()
-        
-    uniques=[]
-    uniquesurl=[]
-    data=link['categories']
-    ret = ''
-    for j in data:
-        if j in lista:
-            url = j
-            name = data[j].encode("utf-8")
-            
-            if name not in uniques:
-                uniques.append(name)
-                uniquesurl.append(url)
-                if ".GAME ZONE" in name:
-                    #print"gamezone::::: "+url
-                    addDir('[COLOR blueviolet]'+name+'[/COLOR]',url,4,MEDIA_URL+'games.png','','','')
-                elif ".Match Day" in name:
-                    if '2' in name:
-                        name = name+' (Recommended)'
-                    addDir('[COLOR chartreuse]'+name+'[/COLOR]',url,4,MEDIA_URL+'epl1.png','','','')
-                elif "Aussie Mania" in name:
-                    addDir('[COLOR yellow]'+name+'[/COLOR]',url,4,MEDIA_URL+'aus.png','','','')
-                else:
-                    addDir(name,url,4,MEDIA_URL+url+'.png','','','')
-
-            
-             
-    if ontapp1 > ontapp2:                
-        #print'################# CREATING INI ########################'        
-        data=link['channels']
-        for field in data:
-            id= str(field['id'])
-            name= field['title'].encode("utf-8")
-            if ".GAME ZONE" in name:
-                
-                CreateInitNow('[COLOR blueviolet]'+name+'[/COLOR]',url,2,MEDIA_URL+'games.png','','','')
-            elif ".EPL Match Day" in name:
-                CreateInitNow('[COLOR aquamarine]'+name+'[/COLOR]',url,2,MEDIA_URL+'premiere.jpg','','','')
+    for c in link:
+        name = c['_id'].encode("utf-8");
+        catName = name.lower().replace(" ", "_")
+        if ".GAME ZONE" in name:
+            addDir('[COLOR blueviolet]' + name + '[/COLOR]', catName, 4, MEDIA_URL + 'games.png', '', '', '')
+        elif ".Match Day" in name:
+            if '2' in name:
+                addDir('[COLOR chartreuse]' + name + ' (Recommended)[/COLOR]', catName, 4, MEDIA_URL + 'epl1.png', '',
+                       '', '')
             else:
-                iconimage=id+'.png'
-                CreatIniNow(name,id,2,MEDIA_URL+iconimage,'False','','')
+                addDir('[COLOR chartreuse]' + name + ' (Recommended)[/COLOR]', catName, 4,
+                       MEDIA_URL + 'epl1.png', '', '', '')
+        elif "Aussie Mania" in name:
+            addDir('[COLOR yellow]' + name + '[/COLOR]', catName, 4, MEDIA_URL + "aus.png", '', '', '')
+        else:
+            addDir(name, catName, 4, MEDIA_URL + catName + ".png", '', '', '')
+
 
                  
     if os.path.exists(cookie_jar) == True:
@@ -447,27 +403,31 @@ def CATEGORIES():
             status = replaceN(x, 60)
             addDir('.[COLOR orange]' + status.strip() + '[/COLOR]','url',1,MEDIA_URL+'twitter.png', '', '', '')
         except:pass
+        addDir('[COLOR darkcyan].Movies on Demand[/COLOR]', 'http://' + THESITE + '/apisprotected/moviesvod.php', 2003, MEDIA_URL + 'movies.png', '', '', '')
+        addDir('[COLOR aliceblue].Maintenance Tools[/COLOR]', 'url', 16000, MEDIA_URL + 'tools.png', '', '', '')
         addDir('.[COLOR white]-->>[/COLOR][COLOR chocolate]Click Here To Check When Your Sub Expires [/COLOR][COLOR white]<---[/COLOR]','url',2007,MEDIA_URL+'sub.png','','','')
+        addDir('[COLOR azure].THE MANIA SERVICES VIDEO TUTORIALS[/COLOR]','http://'+THESITE+'/apisprotected/tutorials.php',2003,MEDIA_URL+'howto.png','','','')
+        addDir('[COLOR gold].Manias Sports Mix (Football, Rugby & More)[/COLOR]','http://'+THESITE+'/apisprotected/extrasum.php',2003,MEDIA_URL+'extra.png','','','')
+        addDir('[COLOR cyan].Sports On Demand[/COLOR]','http://'+THESITE+'/apisprotected/channels1.php',2003,MEDIA_URL+'cup.png','','','')
+        addDir('[COLOR beige].View Calendar[/COLOR]','http://ultimatemania.rocks/ukcalendar.html',2005,MEDIA_URL+'calendar.png','','','')
+        addDir('[COLOR beige].View USA Calendar[/COLOR]','http://ultimatemania.rocks/usacalendar.html',2005,MEDIA_URL+'test.png','','','')
         #addDir('[COLOR mediumspringgreen].Movies / TV Shows [/COLOR][COLOR gold][/COLOR]','http://xtyrepo.me/xunitytalk/playlist/OSS%20MAIN',12000,MEDIA_URL+'movies1.png','','','')
         
-        li = "35"
-        if li in lista:
-            addDir('[COLOR beige].View Calendar[/COLOR]','http://ultimatemania.rocks/ukcalendar.html',2005,MEDIA_URL+'calendar.png','','','')
-            addDir('[COLOR beige].View USA Calendar[/COLOR]','http://ultimatemania.rocks/usacalendar.html',2005,MEDIA_URL+'test.png','','','')
-            addDir('[COLOR gold].Manias Sports Mix (Football, Rugby & More)[/COLOR]','http://'+THESITE+'/apisprotected/extrasum.php',2003,MEDIA_URL+'extra.png','','','')
-            addDir('[COLOR powderblue].Sports Extra Section (Football, Boxing & More)[/COLOR]','http://'+THESITE+'/apisprotected/plp2.php',2003,MEDIA_URL+'extra.png','','','')
-            addDir('[COLOR azure].THE MANIA SERVICES VIDEO TUTORIALS[/COLOR]','http://'+THESITE+'/apisprotected/tutorials.php',2003,MEDIA_URL+'howto.png','','','')
-            #addDir('[COLOR chartreuse].EPL Match Day Section 3 (Recommended)[/COLOR]','http://'+THESITE+'/apisprotected/plp.php',2003,MEDIA_URL+'epl1.png','','','')
-            #addDir('[COLOR navajowhite].NBA Live Games[/COLOR]','http://'+THESITE+'/apisprotected/nba.php',2003,MEDIA_URL+'nba.png','','','')
-            #addDir('[COLOR orange].NFL Game Day[/COLOR]','http://'+THESITE+'/apisprotected/usa.php',2003,MEDIA_URL+'nfl.png','','','')
-            addDir('[COLOR mintcream].MLB Game Pass[/COLOR]','http://'+THESITE+'/apisprotected/mlb.php',2003,MEDIA_URL+'mlb.png','','','')
-            addDir('[COLOR orchid].NHL Live Game Pass[/COLOR]','http://'+THESITE+'/apisprotected/nhl.php',2003,MEDIA_URL+'nhl.png','','','')
-            addDir('[COLOR cyan].Sports On Demand[/COLOR]','http://'+THESITE+'/apisprotected/channels1.php',2003,MEDIA_URL+'cup.png','','','')
-    addDir('[COLOR darkcyan].Movies on Demand[/COLOR]','http://'+THESITE+'/apisprotected/moviesvod.php',2003,MEDIA_URL+'movies.png','','','')
-    addDir('[COLOR aliceblue].Maintenance Tools[/COLOR]','url',16000,MEDIA_URL+'tools.png','','','')
+        # li = "35"
+        # if li in lista:
+        #     addDir('[COLOR beige].View Calendar[/COLOR]','http://ultimatemania.rocks/ukcalendar.html',2005,MEDIA_URL+'calendar.png','','','')
+        #     addDir('[COLOR beige].View USA Calendar[/COLOR]','http://ultimatemania.rocks/usacalendar.html',2005,MEDIA_URL+'test.png','','','')
+        #     addDir('[COLOR gold].Manias Sports Mix (Football, Rugby & More)[/COLOR]','http://'+THESITE+'/apisprotected/extrasum.php',2003,MEDIA_URL+'extra.png','','','')
+        #     addDir('[COLOR powderblue].Sports Extra Section (Football, Boxing & More)[/COLOR]','http://'+THESITE+'/apisprotected/plp2.php',2003,MEDIA_URL+'extra.png','','','')
+        #     addDir('[COLOR azure].THE MANIA SERVICES VIDEO TUTORIALS[/COLOR]','http://'+THESITE+'/apisprotected/tutorials.php',2003,MEDIA_URL+'howto.png','','','')
+        #     #addDir('[COLOR chartreuse].EPL Match Day Section 3 (Recommended)[/COLOR]','http://'+THESITE+'/apisprotected/plp.php',2003,MEDIA_URL+'epl1.png','','','')
+        #     #addDir('[COLOR navajowhite].NBA Live Games[/COLOR]','http://'+THESITE+'/apisprotected/nba.php',2003,MEDIA_URL+'nba.png','','','')
+        #     #addDir('[COLOR orange].NFL Game Day[/COLOR]','http://'+THESITE+'/apisprotected/usa.php',2003,MEDIA_URL+'nfl.png','','','')
+        #     addDir('[COLOR mintcream].MLB Game Pass[/COLOR]','http://'+THESITE+'/apisprotected/mlb.php',2003,MEDIA_URL+'mlb.png','','','')
+        #     addDir('[COLOR orchid].NHL Live Game Pass[/COLOR]','http://'+THESITE+'/apisprotected/nhl.php',2003,MEDIA_URL+'nhl.png','','','')
+        #     addDir('[COLOR cyan].Sports On Demand[/COLOR]','http://'+THESITE+'/apisprotected/channels1.php',2003,MEDIA_URL+'cup.png','','','')
     xbmcplugin.addSortMethod(int(sys.argv[1]), xbmcplugin.SORT_METHOD_VIDEO_TITLE)
-    
-    ADDON.setSetting('ontapp_id_2',str(ontapp1))     
+    # ADDON.setSetting('ontapp_id_2',str(ontapp1))
     xbmc.executebuiltin('Container.SetViewMode(51)')
 
 
@@ -691,57 +651,57 @@ def SportsOnDemand(url):
               NAME='[COLOR darkgrey]%s[/COLOR] - [COLOR yellow]%s[/COLOR]' % (name,date)
            else:
               NAME='[COLOR darkgrey]%s[/COLOR]' % (name)
-           addDir(NAME,id,2004,'','','','')    
-        
-        
-def playAPI(name,url,iconimage):
+           addDir(NAME,id,2004,'','','','')
+
+
+def playAPI(name, url, iconimage):
+    print url
     if not "http" in url:
-      if not "rtmp" in url:
-       
-           return Play_Youtube(name,url,iconimage)
+        if not "rtmp" in url:
+            return Play_Youtube(name, url, iconimage)
     if 'wmsAuthSign=' in url:
-        url = url+'|User-Agent='+getuser()
-         
-    if url =='none':
+        url = url + '|User-Agent=' + getuser()
+
+    if url == 'none':
         dialog = xbmcgui.Dialog()
-        return dialog.ok(THESITE.upper(), '',"Streams Not Active Until match Time", "")
-      
+        return dialog.ok(THESITE.upper(), '', "Streams Not Active Until match Time", "")
+
     if '.f4m' in url:
         import F4MProxy
-        player=F4MProxy.f4mProxyHelper()
-        player.playF4mLink(url, name,iconimage)      
-    else:  
-       if 'CHANGEME' in url:
-          URL=['1600','3000','4500']
-          NAME=['480P','720P','1080P']
-          RES = URL[xbmcgui.Dialog().select('Please Select Resolution', NAME)]
-          url=url.replace('CHANGEME',RES)+getme()
-       liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
-       liz.setInfo(type='Video', infoLabels={'Title':name})
-       liz.setProperty("IsPlayable","true")
-       liz.setPath(url)
-       xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
+        player = F4MProxy.f4mProxyHelper()
+        player.playF4mLink(url, name, iconimage)
+    else:
+        if 'CHANGEME' in url:
+            URL = ['1600', '3000', '4500']
+            NAME = ['480P', '720P', '1080P']
+            RES = URL[xbmcgui.Dialog().select('Please Select Resolution', NAME)]
+            url = url.replace('CHANGEME', RES) + getme()
+        liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
+        liz.setInfo(type='Video', infoLabels={'Title': name})
+        liz.setProperty("IsPlayable", "true")
+        liz.setPath(url)
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 
        
 def GENRES(name,url):
-    if sessionExpired():
-        Login()
-  
     link = json.loads(server())
-    data=link['channels']
-    for field in data:
-        id= field['id']
-        title= field['title'].encode("utf-8")
-        genre= field['cat_id']
-        iconimage=image+str(id)+'.png'
-        if url == genre:
-            if ':' in title:
-                
-                TITLEHACK = title.split(':',1)[1].replace(' HD','')
-                if len(TITLEHACK)>3:
-                    addDir(title,str(id),2,iconimage,'False','','')
-            else:      
-                addDir(title,str(id),2,iconimage,'False','','')
+    type(link)
+    for field in link:
+        channels = field['channels']
+        name = field['_id']
+        for ch in channels:
+            cid = ch['id']
+            title = ch['title'].encode("utf-8")
+            genre = name.lower().replace(" ", "_")
+            iconimage = image + cid + '.png'
+            if url == genre:
+                if ':' in title:
+
+                    TITLEHACK = title.split(':', 1)[1].replace(' HD', '')
+                    if len(TITLEHACK) > 3:
+                        addDir(title, cid, 2, iconimage, 'False', '', '')
+                else:
+                    addDir(title, cid, 2, iconimage, 'False', '', '')
                 
     if url=='79':
        try:SportsOnDemand('http://'+THESITE+'/apisprotected/plp.php')
@@ -1210,32 +1170,30 @@ def Play_Youtube(name,url,iconimage):
     xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 
 
-    
 def PLAY_STREAM(name, url, iconimage, play, description):
+    if sessionExpired() or os.path.exists(cookie_jar) == False:
+        Login()
 
-    
-    if play =='GET_EVENT':
-        url=PLAY_FROM_EVENTS(name, url, iconimage, play, description)
+    if play == 'GET_EVENT':
+        url = PLAY_FROM_EVENTS(name, url, iconimage, play, description)
 
-           
-        if not url:
-            return Show_Cover()
-         
-    if len(url)>7:
-       stream_url = url
+    if not url:
+        return Show_Cover()
 
-    else:   
-       if sessionExpired():
-           Login()
-       net.set_cookies(cookie_jar)
-       stream_url= net.http_GET('http://ultimatemania.rocks/matrixtest.php?do=getStreamLink&channel='+url,headers={'User-Agent' :UA}).content+timeout()
-       if stream_url=='':
-           return Show_Down()
-    liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
-    liz.setInfo(type='Video', infoLabels={'Title':description})
-    liz.setProperty("IsPlayable","true")
-    liz.setPath(stream_url)
-    xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz) 
+    net.set_cookies(cookie_jar)
+    stream_url = net.http_GET('http://' + THESITE + '/reloaded.php?do=stream&type=rtmp&channel=%s' % url, headers={'User-Agent': UA}).content + timeout()
+    tmpUrl = str(stream_url).strip()
+    print stream_url
+    if stream_url == '':
+        return Show_Down()
+    elif tmpUrl.startswith('direct'):
+        playAPI(name, tmpUrl.replace('direct#', '', 2), '')
+    else:
+        liz = xbmcgui.ListItem(name, iconImage='DefaultVideo.png', thumbnailImage=iconimage)
+        liz.setInfo(type='Video', infoLabels={'Title': description})
+        liz.setProperty("IsPlayable", "true")
+        liz.setPath(tmpUrl)
+        xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
 
 
 def comingSoon():
@@ -1707,29 +1665,30 @@ except:
         
 #these are the modes which tells the plugin where to go
 if mode==2:
-        PLAY_STREAM(name,url,iconimage,play,description)
+    print "Using mode 2"
+    PLAY_STREAM(name,url,iconimage,play,description)
         
 elif mode==3:
-        REPLAY()
+    REPLAY()
         
 elif mode==4:
-        GENRES(name,url)
+    GENRES(name,url)
 
 elif mode==5:
-        OnDemand(url)
+    OnDemand(url)
 
 
 elif mode==6:
-        OnDemandLinks(url)
+    OnDemandLinks(url)
 
 elif mode==7:
-        PlayOnDemand(url)         
+    PlayOnDemand(url)
         
 elif mode==200:
-        schedule(name,url,iconimage)
+    schedule(name,url,iconimage)
         
 elif mode==201:
-        fullguide(name,url,iconimage,description)
+    fullguide(name,url,iconimage,description)
         
 elif mode==202:
         Login()

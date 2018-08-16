@@ -191,7 +191,7 @@ provider-name="rolica, ManiaTeam">
   </extension>
 </addon>
 
-<addon id="plugin.video.ultimatemania" name="UltimateMania" version="3.9.4" provider-name="The Mania Team">
+<addon id="plugin.video.ultimatemania" name="UltimateMania" version="3.9.6" provider-name="The Mania Team">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.urlresolver" version="0.0.1"/>

@@ -407,7 +407,7 @@ def CATEGORIES():
         addDir('[COLOR aliceblue].Maintenance Tools[/COLOR]', 'url', 16000, MEDIA_URL + 'tools.png', '', '', '')
         addDir('.[COLOR white]-->>[/COLOR][COLOR chocolate]Click Here To Check When Your Sub Expires [/COLOR][COLOR white]<---[/COLOR]','url',2007,MEDIA_URL+'sub.png','','','')
         addDir('[COLOR azure].THE MANIA SERVICES VIDEO TUTORIALS[/COLOR]','http://'+THESITE+'/apisprotected/tutorials.php',2003,MEDIA_URL+'howto.png','','','')
-        addDir('[COLOR gold].Manias Sports Mix (Football, Rugby & More)[/COLOR]','http://'+THESITE+'/apisprotected/extrasum.php',2003,MEDIA_URL+'extra.png','','','')
+        #addDir('[COLOR gold].Manias Sports Mix (Football, Rugby & More)[/COLOR]','http://'+THESITE+'/apisprotected/extrasum.php',2003,MEDIA_URL+'extra.png','','','')
         addDir('[COLOR cyan].Sports On Demand[/COLOR]','http://'+THESITE+'/apisprotected/channels1.php',2003,MEDIA_URL+'cup.png','','','')
         addDir('[COLOR beige].View Calendar[/COLOR]','http://ultimatemania.rocks/ukcalendar.html',2005,MEDIA_URL+'calendar.png','','','')
         addDir('[COLOR beige].View USA Calendar[/COLOR]','http://ultimatemania.rocks/usacalendar.html',2005,MEDIA_URL+'test.png','','','')

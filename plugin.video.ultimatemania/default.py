@@ -1459,7 +1459,8 @@ def Tools():
     addDir('.[COLOR white]-->>[/COLOR][COLOR chocolate]Click Here To Check When Your Sub Expires [/COLOR][COLOR white]<---[/COLOR]','url',2007,'','','','')
     addDir('Check For Updates','.f4m',16005,'','','','',0)
     addDir('Delete Cache','.f4m',16006,'','','','',0)
-    addDir('Speed Test','.f4m',16001,'','','','',0)   
+    addDir('Speed Test','.f4m',16001,'','','','',0)
+    addDir('>>> [COLOR red]REFRESH CHANNELS LIST[/COLOR] <<<','.f4m',202,'','','','',0)
     addDir('Change Username or Password','.f4m',16002,'','','','',0)  
 
 
@@ -1589,7 +1590,7 @@ def addDir(name,url,mode,iconimage,play,date,description,page=''):
         menu.append(('[COLOR red]Delete Cookie[/COLOR]','XBMC.RunPlugin(%s?mode=203&url=None)'% (sys.argv[0])))
         menu.append(('[COLOR cyan]Log Out[/COLOR]','XBMC.RunPlugin(%s?mode=205&url=None)'% (sys.argv[0])))
         liz.addContextMenuItems(items=menu, replaceItems=False)
-        if mode == 2 or mode==7  or mode==2004 or mode==3002 or mode==16001 or mode==16002 or mode==16003 or mode==16004 or mode==16005 or mode==16006 or mode==203 or mode==16008 or mode==16012:
+        if mode == 2 or mode==7  or mode==2004 or mode==3002 or mode==16001 or mode==16002 or mode==16003 or mode==16004 or mode==16005 or mode==16006 or mode==203 or mode==202 or mode==16008 or mode==16012:
             if not mode == 2000:
                 if not '.f4m' in url:
                     liz.setProperty("IsPlayable","true")

@@ -1,11 +1,3 @@
-[B]Version 2.2.2[/B]
-
--Added addon info
-
-[B]Version 2.2.1[/B]
-
--Intial release
-
-[B]Version 1.0.0[/B]
-
--Intial release
+1.0 - First release
+2.0 - SKIPPED RELEASE
+3.0 - Added TV Archive, TV Series

@@ -157,54 +157,53 @@ provider-name="rolica, ManiaTeam">
     </extension>
 </addon>
 
-<addon id="plugin.video.sportsmania" name="SportsMania" version="3.9.7" provider-name="The Mania Team">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.urlresolver" version="0.0.1"/>
-       <import addon="script.module.requests" version="0.0.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-    <summary lang="en">Premium sports streaming service</summary>
-    <description lang="en">This is a premium streaming service you will need an account from http://sportsmania.rocks</description>
-    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://sportsmania.rocks[/B][/I][/COLOR]</disclaimer>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.sportsnationhdtv" name="Mania HD" version="3.9.7" provider-name="The Mania Team">
+<addon id="plugin.video.sportsmania" name="Sports Mania" version="4.0.0" provider-name="Mania Services">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.urlresolver" version="0.0.1"/>
-    <import addon="script.module.requests" version="0.0.1"/>
+	<import addon="script.module.addon.common" />
   </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
+  <extension point="xbmc.python.pluginsource" library="init.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">24-7 Streaming of various tv shows or show types</summary>
-    <description lang="en">This is a premium streaming service you will need an account from http://maniahd.rocks</description>
-    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://maniahd.rocks[/B][/I][/COLOR]</disclaimer>
+    <summary lang="en"></summary>
+	<website>http://sportsmania.rocks</website>
+<description lang="en">Please visit http://sportsmania.rocks/payments to signup to Sports Mania to view our crystal clear HD streams.
+        </description>
     <platform>all</platform>
   </extension>
 </addon>
 
-<addon id="plugin.video.ultimatemania" name="UltimateMania" version="3.9.8" provider-name="The Mania Team">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.urlresolver" version="0.0.1"/>
-       <import addon="script.module.requests" version="0.0.1"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+<addon id="plugin.video.sportsnationhdtv" name="Mania HD" version="4.0.0" provider-name="Mania Services">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="init.py">
         <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-    <summary lang="en">UltimateMania - Ultimate Streams!</summary>
-    <description lang="en">This is a premium streaming service you will need an account from http://ultimatemania.rocks
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+	<website>http://maniahd.rocks</website>
+<description lang="en">Please visit http://maniahd.rocks/payments to signup to Sports Mania to view our crystal clear HD streams.
         </description>
-    <disclaimer lang="en">[COLOR red][B][I]For support please go to http://ultimatemania.rocks/ [/B][/I][/COLOR]</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.ultimatemania" name="Ultimatemania" version="4.0.0" provider-name="Mania Services">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.addon.common" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="init.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+	<website>http://ultimatemania.rocks</website>
+<description lang="en">Please visit http://ultimatemania.rocks/payments to signup to Ultimate Mania to view our crystal clear HD streams.
+        </description>
     <platform>all</platform>
   </extension>
 </addon>

@@ -46,7 +46,7 @@ except ImportError:
         ET = None
 
 # Plugin Info
-ID               = 'plugin.video.rebel'
+ID               = 'plugin.video.sportsmania'
 ADDON            = xbmcaddon.Addon( ID )
 ADDON_ID         = ADDON.getAddonInfo('id')
 ADDON_NAME       = ADDON.getAddonInfo('name')

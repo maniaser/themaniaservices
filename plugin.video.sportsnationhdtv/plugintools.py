@@ -42,35 +42,35 @@ module_log_enabled=False; http_debug_log_enabled=False; LIST="list"; THUMBNAIL="
 # Suggested view codes for each type from different skins (initial list thanks to xbmcswift2 library)
 ALL_VIEW_CODES={
     'list': {
-        'skin.confluence': 515, # List
+        'skin.confluence': 504, # List
         'skin.aeon.nox': 50, # List
         'skin.droid': 50, # List
         'skin.quartz': 50, # List
         'skin.re-touched': 50, # List
     },
     'thumbnail': {
-        'skin.confluence': 515, # Thumbnail
+        'skin.confluence': 504, # Thumbnail
         'skin.aeon.nox': 500, # Wall
         'skin.droid': 51, # Big icons
         'skin.quartz': 51, # Big icons
         'skin.re-touched': 500, #Thumbnail
     },
     'movies': {
-        'skin.confluence': 515, # Thumbnail 515, # Media Info 3
+        'skin.confluence': 504, # Thumbnail 504, # Media Info
         'skin.aeon.nox': 500, # Wall
         'skin.droid': 51, # Big icons
         'skin.quartz': 52, # Media info
         'skin.re-touched': 500, #Thumbnail
     },
     'tvshows': {
-        'skin.confluence': 515, # Thumbnail 515, # Media Info 3
+        'skin.confluence': 504, # Thumbnail 504, # Media Info
         'skin.aeon.nox': 500, # Wall
         'skin.droid': 51, # Big icons
         'skin.quartz': 52, # Media info
         'skin.re-touched': 500, #Thumbnail
     },
     'seasons': {
-        'skin.confluence': 515, # List
+        'skin.confluence': 504, # List
         'skin.aeon.nox': 50, # List
         'skin.droid': 50, # List
         'skin.quartz': 52, # Media info
@@ -255,7 +255,7 @@ def set_view(view_mode, view_code=0):
             view_codes=ALL_VIEW_CODES.get(view_mode)
             view_code=view_codes.get(skin_name)
             _log("set_view view code for "+view_mode+" in "+skin_name+" is "+str(view_code))
-            xbmc.executebuiltin("Container.SetViewMode(515)")
+            xbmc.executebuiltin("Container.SetViewMode(504)")
         else:
             _log("set_view view code forced to "+str(view_code))
             xbmc.executebuiltin("Container.SetViewMode("+str(view_code)+")")

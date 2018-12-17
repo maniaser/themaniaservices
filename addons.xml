@@ -157,7 +157,7 @@ provider-name="rolica, ManiaTeam">
     </extension>
 </addon>
 
-<addon id="plugin.video.sportsmania" name="Sports Mania" version="4.0.0" provider-name="Mania Services">
+<addon id="plugin.video.sportsmania" name="Sports Mania" version="4.0.1" provider-name="Mania Services">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -174,7 +174,7 @@ provider-name="rolica, ManiaTeam">
   </extension>
 </addon>
 
-<addon id="plugin.video.sportsnationhdtv" name="Mania HD" version="4.0.0" provider-name="Mania Services">
+<addon id="plugin.video.sportsnationhdtv" name="Mania HD" version="4.0.1" provider-name="Mania Services">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -191,7 +191,7 @@ provider-name="rolica, ManiaTeam">
   </extension>
 </addon>
 
-<addon id="plugin.video.ultimatemania" name="Ultimatemania" version="4.0.0" provider-name="Mania Services">
+<addon id="plugin.video.ultimatemania" name="Ultimatemania" version="4.0.1" provider-name="Mania Services">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />

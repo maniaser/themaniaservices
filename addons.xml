@@ -34,6 +34,26 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.themaniaservices"
+       name="The Mania Services"
+       version="1.1"
+       provider-name="Team Mania">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[COLOR dodgerblue][B]The Mania Services[/COLOR]</summary>
+    <language>en</language>
+    <description lang="en">All In One Mania Services Addon, You Can Log In Here With Your Sports Mania, Mania HD Or Ultimate Mania Account. PLEASE NOTE: For TV Series & Movies You Need a Ultimate Mania Account.</description>
+     <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.ultimatemania" name="Ultimatemania" version="4.0.3" provider-name="Mania Services">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
